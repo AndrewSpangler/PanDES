@@ -1,6 +1,6 @@
 See pandes.py's `__main__` section for usage
 
-Setup:
+# Setup:
 
 `python -m pip install -r requirements.txt`
 

@@ -23,7 +23,7 @@ class GigaBenchmarker(ShowBase):
                 batch_len = min(BATCH_SIZE, TOTAL_VALUES - total_done)
                 current_key = key_start + total_done
                 
-                results, _ = self.gdes.process_block(self.test_block, batch_len, key_start=current_key)
+                results = self.gdes.process_block(self.test_block, batch_len, key_start=current_key)
                 
                 total_done += batch_len
                 elapsed = time.time() - start_time
@@ -32,7 +32,7 @@ class GigaBenchmarker(ShowBase):
                 if (total_done // BATCH_SIZE) % 10 == 0:
                     print(f"Progress: {total_done/TOTAL_VALUES*100:6.2f}% | Speed: {throughput:,.0f} ops/sec")
 
-                self.graphics_engine.render_frame()
+                base.taskMgr.step()
 
         except KeyboardInterrupt:
             print("\nInterrupted.")

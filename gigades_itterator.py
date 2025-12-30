@@ -11,7 +11,7 @@ class GigaBenchmarker(ShowBase):
         ShowBase.__init__(self)
         self.disableMouse()
         self.gdes = GigaDES(self)
-        self.test_block = b'beefface' 
+        self.test_block = b'kgs!@#$%' 
         
     def run_benchmark(self):
         total_done = 0

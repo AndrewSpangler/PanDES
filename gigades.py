@@ -8,7 +8,6 @@ from panda3d.core import (
     GraphicsPipeSelection, FrameBufferProperties, WindowProperties, GraphicsPipe
 )
 
-# Optimized Headless Config
 for k, v in {
     "window-type": "none",
     "audio-library-name": "null",
@@ -39,7 +38,6 @@ class GigaDES:
         return ((val << shift) | (val >> (28 - shift))) & 0x0FFFFFFFu;
     }
 
-    // Moved up to fix "undefined" error
     void permute64(uint h, uint l, const int table[64], out uint res_h, out uint res_l) {
         res_h = 0u; res_l = 0u;
         for(int i = 0; i < 64; i++) {
